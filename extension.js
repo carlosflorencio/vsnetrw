@@ -165,7 +165,7 @@ function getLineUnderCursor() {
 
   if (iconsEnabled()) {
     // remove icon from line
-    return line.text.substring(2)
+    return line.text.substring(2).trim()
   }
 
   return line.text;
@@ -370,11 +370,13 @@ async function openFileUnderCursor(viewColumn) {
   let basePath = getCurrentDir();
   let newPath = path.resolve(basePath, relativePath);
   let uri = Uri.file(newPath);
+    console.log("here opening 1", newPath, relativePath)
   let stat = await workspace.fs.stat(uri);
 
   if (stat.type & FileType.Directory) {
     await openExplorer(newPath);
   } else {
+    console.log("here opening", newPath, relativePath)
     await openFileInVscodeEditor(newPath, viewColumn);
   }
 }

@@ -1,8 +1,8 @@
 {
-	"name": "vsnetrw",
+	"name": "vscode-florencio-vsnetrw",
 	"version": "0.2.4",
 	"description": "A vscode split explorer for files",
-	"publisher": "danprince",
+	"publisher": "florencio",
 	"icon": "icon.png",
 	"keywords": [
 		"netrw",
@@ -13,7 +13,7 @@
 	],
 	"main": "extension.js",
 	"license": "Unlicense",
-	"repository": "danprince/vsnetrw",
+	"repository": "carlosflorencio/vsnetrw",
 	"engines": {
 		"vscode": "^1.68.0"
 	},

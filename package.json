@@ -1,6 +1,6 @@
 {
 	"name": "vscode-florencio-vsnetrw",
-	"version": "0.2.4",
+	"version": "0.2.5",
 	"description": "A vscode split explorer for files",
 	"publisher": "florencio",
 	"icon": "icon.png",

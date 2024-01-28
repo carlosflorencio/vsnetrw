@@ -181,7 +181,12 @@ function getLinesUnderCursor() {
   let lines = [];
   for (let i = editor.selection.start.line; i <= editor.selection.end.line; i++) {
     let line = editor.document.lineAt(i);
-    lines.push(line.text);
+    if (iconsEnabled()) {
+      // remove icon from line
+      lines.push(line.text.substring(2).trim());
+    } else {
+      lines.push(line.text);
+    }
   }
   return lines;
 }
@@ -370,7 +375,7 @@ async function openFileUnderCursor(viewColumn) {
   let basePath = getCurrentDir();
   let newPath = path.resolve(basePath, relativePath);
   let uri = Uri.file(newPath);
-    console.log("here opening 1", newPath, relativePath)
+  console.log("here opening 1", newPath, relativePath)
   let stat = await workspace.fs.stat(uri);
 
   if (stat.type & FileType.Directory) {
